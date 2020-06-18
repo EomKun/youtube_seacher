@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <h1>Youtube Search</h1>
-    <SearchBar @search="input" />
-    <div style="float: left; display: inline-block">
-      <VideoPlayer style="float: left; margin=30vw" v-if="results[0]" v-bind="results[0]" />
-      <VideoList style="float: left" v-if="results" :results="results" />
+    <SearchBar id="searchBar" @search="input" />
+    <div id="wapper" style="float: left; width: 100%">
+        <VideoPlayer style="float: left; margin=30vw" v-if="results[0]" v-bind="results[0]" />
+        <VideoList style="float: left" v-if="results" :results="results" />
     </div>
   </div>
 </template>
@@ -61,5 +61,15 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#wapper {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+#searchBar {
+  margin-bottom: 5vw;
 }
 </style>
